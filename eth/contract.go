@@ -51,7 +51,7 @@ func (c *Contract) Call(methodName string, args ...interface{}) (interface{}, er
 	}
 
 	var out string
-	if err := c.provider.Call("eth_call", &out, msg, "latest"); err != nil {
+	if err := c.provider.Call("zond_call", &out, msg, "latest"); err != nil {
 		return nil, err
 	}
 
