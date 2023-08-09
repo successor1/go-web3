@@ -192,7 +192,7 @@ func (e *Eth) FeeHistory(historicalBlocks int, blockNumber *big.Int, feeHistoryP
 // Do Call functions
 func (e *Eth) Call(msg *types.CallMsg, block *big.Int) (string, error) {
 	var out string
-	if err := e.c.Call("eth_call", &out, msg, utils.ToBlockNumArg(block)); err != nil {
+	if err := e.c.Call("zond_call", &out, msg, utils.ToBlockNumArg(block)); err != nil {
 		return "", err
 	}
 	return out, nil
